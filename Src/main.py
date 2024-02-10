@@ -21,43 +21,53 @@
 # Parse New Pcap file
 
 
-pcaplist = ['20160421_150521.pcap' ]
+# pcaplist = ['20160421_150521.pcap' ]
 
 
-pcaplist2 = [ 'dns_192.168.3.104-unvirus.pcap',
-'dns_2014-01-31_capture-win7.pcap',
-'dns_2014-04-07_capture-win13.pcap',
-'dns_2014-06-06_capture-win2.pcap',
-'dns_2014-06-30_capture-win2.pcap',
-'dns_2015-03-12_capture-win6.pcap',
-'dns_2015-05-01_capture-win2.pcap',
-'dns_2015-06-19_capture-win12.pcap',
-'dns_2015-10-23_win7.pcap',
-'dns_2016-02-12-capture_win4.pcap',
-'dns_2016-04-29_win-3.pcap',
-'dns_2016-05-27_win-4.pcap',
-'dns_2017-05-16_win5.pcap',
-'dns_2017-11-22_win4.pcap',
-'dns_2017-11-23_win16.pcap',
-'dns_2017-12-18_win2.pcap',
-'dns_2018-01-29_win6.pcap',
-'dns_2018-01-30_win10.pcap',
-'dns_2018-01-30_win17.pcap',
-'dns_2018-01-30_win9.pcap',
-'dns_2018-02-16_win8.pcap',
-'dns_2018-04-03_win10.pcap',
-'dns_2018-04-03_win11.pcap',
-'dns_capture-win6.pcap',
-'dns_capture_win15.pcap'
- ]
+# pcaplist2 = [ 'dns_192.168.3.104-unvirus.pcap',
+# 'dns_2014-01-31_capture-win7.pcap',
+# 'dns_2014-04-07_capture-win13.pcap',
+# 'dns_2014-06-06_capture-win2.pcap',
+# 'dns_2014-06-30_capture-win2.pcap',
+# 'dns_2015-03-12_capture-win6.pcap',
+# 'dns_2015-05-01_capture-win2.pcap',
+# 'dns_2015-06-19_capture-win12.pcap',
+# 'dns_2015-10-23_win7.pcap',
+# 'dns_2016-02-12-capture_win4.pcap',
+# 'dns_2016-04-29_win-3.pcap',
+# 'dns_2016-05-27_win-4.pcap',
+# 'dns_2017-05-16_win5.pcap',
+# 'dns_2017-11-22_win4.pcap',
+# 'dns_2017-11-23_win16.pcap',
+# 'dns_2017-12-18_win2.pcap',
+# 'dns_2018-01-29_win6.pcap',
+# 'dns_2018-01-30_win10.pcap',
+# 'dns_2018-01-30_win17.pcap',
+# 'dns_2018-01-30_win9.pcap',
+# 'dns_2018-02-16_win8.pcap',
+# 'dns_2018-04-03_win10.pcap',
+# 'dns_2018-04-03_win11.pcap',
+# 'dns_capture-win6.pcap',
+# 'dns_capture_win15.pcap'
+#  ]
 
 from PcapParser import PcapParser
-
+import glob
 
 try:
 
-    for files in pcaplist:
-        filename = "../../" + files
+    # for files in pcaplist:
+    #     filename = "/opt/app/files/" + files
+    #     try:
+
+    #         #PcapParser( Max_packet_count, mode, filename, verbose):
+    #         obj_dns_parser = PcapParser(1000000, 3, filename, 1)
+    #         obj_dns_parser.start_parse()
+
+    #     except Exception as e:
+    #         print (e)
+    #         continue
+    for filename in glob.glob('/opt/app/files/*.pcap'):
         try:
 
             #PcapParser( Max_packet_count, mode, filename, verbose):
